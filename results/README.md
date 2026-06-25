@@ -13,3 +13,9 @@ no llegaron a la entrega); aquí se conserva solo la traza del arco.
 
 Las ramas exploratorias descartadas (maker, large-edge intraday, settlement
 scouts, etc.) se resumen como negativos en la memoria, no se incluyen aquí.
+
+Las tablas finales de la memoria se pueden recalcular desde el ledger público:
+
+```bash
+python scripts/experiments/recompute_final_summary_from_public_ledger.py --check
+```

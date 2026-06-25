@@ -78,8 +78,8 @@ reentrena para mejorar estos números. Solo fechas posteriores pueden validarla
 ```text
 config/        Umbrales congelados de la política + configs del arco
 docs/          18 documentos canónicos del arco (01..18), renombrados
-notebooks/     8 notebooks pedagógicos ejecutados (EDA, splits, target, baseline,
-               latencia, secuencias, corrección adverse, especialista)
+notebooks/     9 notebooks pedagógicos/de auditoría (EDA, splits, target, baseline,
+               latencia, secuencias, corrección adverse, especialista, ledger final)
 scripts/       Entrypoints reproducibles (scripts/experiments/)
 src/edgerunner/ Paquete con la lógica compartida (data, features, models, eval)
 results/       key_results.csv y decision_register.csv filtrados al arco
@@ -108,6 +108,19 @@ Documentos clave para entender el pipeline, en orden:
 `docs/01_sistema_de_datos.md` -> `docs/04_splits_validacion_temporal.md` ->
 `docs/07_stress_de_latencia.md` -> `docs/14_especialista_prestart_h60.md` ->
 `docs/16_validacion_fresh.md` -> `docs/18_paper_shadow.md`.
+
+La guía de lectura de `docs/` está en `docs/README.md`: explica qué documentos
+son canónicos, qué artefactos internos no se publican y cómo auditar las cifras
+finales.
+
+La auditoría final no necesita el corpus privado:
+
+```bash
+python scripts/experiments/recompute_final_summary_from_public_ledger.py --check
+```
+
+También está disponible como notebook en
+`notebooks/08_auditoria_final_ledger.ipynb`.
 
 ## Estado y trabajo futuro
 
